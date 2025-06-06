@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preksha Tomar - Portfolio</title>
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    section h2 {
+      border-bottom: 3px solid #4a90e2;
+      display: inline-block;
+      margin-bottom: 20px;
+      padding-bottom: 6px;
+      font-size: 2rem;
+      color: #333;
+    }
+    /* Projects */
+    .project {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .project:hover {
+      box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
+    }
+    .project h3 {
+      margin-top: 0;
+      color: #4a90e2;
+    }
+    .project a {
+      color: #4a90e2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .project a:hover {
+      text-decoration: underline;
+    }
+    /* Contact */
+    .contact-info p {
+      margin: 8px 0;
+    }
+    .contact-info a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      color: #777;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #ddd;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Preksha Tomar</h1>
+    <p>Full Stack Developer | React Enthusiast | Learner</p>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm Preksha, a passionate developer who loves building web apps.
+        I enjoy coding, learning new technologies, and solving problems.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div id="projects-container">
+        <!-- Projects inserted by JS -->
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p>Email: <a href="mailto:prekshatomar29@gmail.com">prekshatomar29@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/preksha-tomar-968614225" target="_blank" rel="noreferrer">www.linkedin.com/in/preksha-tomar-968614225</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Preksha Tomar
+  </footer>
+
+  <script>
+    // Your projects data with updated links
+    const projects = [
+      {
+        title: "Todo List",
+        description: "A simple and intuitive Todo List app to manage your daily tasks.",
+        link: "https://github.com/PrekshaTomar/Todo-List.git",
+      },
+      {
+        title: "Weather App",
+        description: "A Weather forecasting app that shows current weather info for any city.",
+        link: "https://github.com/PrekshaTomar/Weather-App.git",
+      },
+    ];
+
+    // Insert projects dynamically
+    const projectsContainer = document.getElementById("projects-container");
+    projects.forEach(proj => {
+      const div = document.createElement("div");
+      div.className = "project";
+      div.innerHTML = `
+        <h3>${proj.title}</h3>
+        <p>${proj.description}</p>
+        <a href="${proj.link}" target="_blank" rel="noreferrer">View on GitHub</a>
+      `;
+      projectsContainer.appendChild(div);
+    });
+
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
